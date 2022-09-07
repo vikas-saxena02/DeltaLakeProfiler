@@ -16,3 +16,8 @@ The repo contains three notebooks:
       2. partition column does not have blank or empty values
       3. Paritition column has low cardinality
       4. Partitition column provides a uniform data distribution
+
+# References
+[DescribeDeltaDetailsCommand.scala](https://github.com/databricks/runtime/blob/master/sql/core/src/main/scala/com/databricks/sql/transaction/tahoe/commands/DescribeDeltaDetailsCommand.scala)
+
+[DescribeDeltaHistoryCommand.scala](https://github.com/databricks/runtime/blob/master/sql/core/src/main/scala/com/databricks/sql/transaction/tahoe/commands/DescribeDeltaHistoryCommand.scala) 
