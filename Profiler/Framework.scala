@@ -79,8 +79,8 @@ val tbLDetails = tableDetailsDF.select(
   col("partitionCount").as("numberOfPartitions"),
   expr("case when numFiles > 0 then sizeInBytes/numFiles else 0 end").as("avgFileSizeInBytes"),
   expr("case when partitionCount > 0 then sizeInBytes/partitionCount else 0 end").as("avgPartitionSizeInBytes"),
-  expr("length(trim(nvl(zOrderColumns,''))) > 0").as("isZordered"),
-  col("zOrderColumns").as("zOrderDetails"),
+  expr("length(trim(nvl(case when zOrderColumns = '[]' then null else zOrderColumns end,''))) > 0").as("isZordered"),
+  expr("case when zOrderColumns = '[]' then null else zOrderColumns end").as("zOrderDetails"),
 )
 
 // COMMAND ----------
